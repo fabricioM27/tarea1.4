@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="tarea1._4.Views.Verfotos"
+             xmlns:conver="clr-namespace:tarea1._4.Controller" 
+             Title="Verfotos">
+
+
+    <ContentPage.Resources>
+        <conver:ByteArrayImage x:Key="ByteArray"></conver:ByteArrayImage>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Image x:Name="imagen" Source="{Binding Imagen,Converter={StaticResource ByteArray}}" Grid.Column="0" />
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="tarea1._4.MainPage">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="Photo" Source="noimagen.png"></Image>
+        <Label Text="Nombre" Grid.Row="1" FontSize="20"/>
+        <Entry x:Name="txtNombre" Grid.Row="2" Placeholder="Nombre de la foto"/>
+        <Label Text="Descripcion" Grid.Row="3" FontSize="20"/>
+        <Entry x:Name="txtDescripcion" Grid.Row="4" Placeholder="Descripcion de la foto"/>
+        <Button x:Name="tomarfoto"
+                Grid.Row="5"
+                Text="Tomar Foto" Clicked="tomarfoto_Clicked"/>
+        
+        <Button x:Name="Guardar"
+                Grid.Row="6"
+                Text="Guardar Foto" Clicked="Guardar_Clicked"/>
+
+        <Button x:Name="verfotos"
+        Grid.Row="7"
+        Text="Ver Foto" Clicked="verfotos_Clicked"/>
+    </Grid>
+</ContentPage>

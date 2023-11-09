@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="tarea1._4.Views.PageFotos"
+             xmlns:conver="clr-namespace:tarea1._4.Controller"
+             Title="PageFotos">
+
+    <ContentPage.Resources>
+        <conver:ByteArrayImage x:Key="ByteArray"></conver:ByteArrayImage>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lstFotos" ItemTapped="lstFotos_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image x:Name="image" Source="{Binding Imagen,Converter={StaticResource ByteArray}}" WidthRequest="60" HeightRequest="60"  Grid.Column="0"/>
+                                <Label Text="{Binding Nombre}" FontAttributes="Bold"  Grid.Column="1"/>
+                                <Label Text="{Binding Descripcion}"  Grid.Column="2"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
